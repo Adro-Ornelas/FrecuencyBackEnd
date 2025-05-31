@@ -52,13 +52,18 @@ class BaseDeDatos
         $arreglo = array();
         foreach ($res as $fila) {
            $cancion = new Cancion();
-           $cancion->id_cancion = $fila['ID_cancion'] ;
-           // ANd so weiter
-           // echo $obj
+           $cancion->id_cancion = $fila['ID_cancion'];
+           $cancion->id_genero = $fila['ID_genero'];
+           $cancion->id_album = $fila['ID_album'];
+           $cancion->titulo = $fila['Titulo'];
+           $cancion->duracion = $fila['Letra'];
+           $cancion->fecha = $fila['Fecha'];
+           // Columna nueva a partir de búsqueda:
+           $cancion->artista = "N"; // Not defined yet
+           
            array_push($arreglo, $cancion);
         }
         return $arreglo;
-
     }
 }
 ?>
