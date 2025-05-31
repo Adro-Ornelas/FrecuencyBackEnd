@@ -1,5 +1,8 @@
 <?php
+// Objetos de cada tabla:
+require_once 'Cancion.php';
 
+// Objeto para conectar y CRUD:
 class BaseDeDatos
 {
     private $con;
@@ -41,6 +44,21 @@ class BaseDeDatos
         }
 
         return $tablas;
+    }
+    public function nombrarCanciones(){
+        $sql = $this->con->prepare("SELECT * FROM cancion");
+        $sql->execute();
+        $res = $sql->fetchAll();
+        $arreglo = array();
+        foreach ($res as $fila) {
+           $cancion = new Cancion();
+           $cancion->id_cancion = $fila['ID_cancion'] ;
+           // ANd so weiter
+           // echo $obj
+           array_push($arreglo, $cancion);
+        }
+        return $arreglo;
+
     }
 }
 ?>
