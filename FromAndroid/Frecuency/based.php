@@ -56,11 +56,12 @@ class BaseDeDatos
            $cancion->id_genero = $fila['ID_genero'];
            $cancion->id_album = $fila['ID_album'];
            $cancion->titulo = $fila['Titulo'];
-           $cancion->duracion = $fila['Letra'];
+           $cancion->duracion = $fila['Duracion'];
            $cancion->fecha = $fila['Fecha'];
+           $cancion->letra = $fila['Letra'];
            // Columna nueva a partir de búsqueda:
            $cancion->artista = "N"; // Not defined yet
-           
+
            array_push($arreglo, $cancion);
         }
         return $arreglo;
