@@ -16,6 +16,24 @@ class BaseDeDatos
         }
     }
 
+    public function registrar($nombre, $apeP, $apeM, $email, $pass)
+    {
+        try {
+            $sql = $this->con->prepare("INSERT INTO `usuario` (`id_usuario`, `Nombre`, `Apellido_Paterno`, `Apellido_Materno`, `Email`, `Contraseña`) 
+                                    VALUES (NULL, ?, ?, ?, ?, ?);");
+            $sql->execute([$nombre, $apeP, $apeM, $email, $pass]);
+
+            if ($sql->rowCount() > 0) {
+                return 1; // Éxito
+            } else {
+                return -1; // Fallo al insertar
+            }
+        } catch (PDOException $e) {
+            return -2; // Error de base de datos
+        }
+    }
+
+
     public function ingreso($usr, $pass)
     {
         $sql = $this->con->prepare("SELECT * FROM usuario WHERE BINARY `Email` = ? AND BINARY `Contraseña` = ?");
@@ -45,24 +63,25 @@ class BaseDeDatos
 
         return $tablas;
     }
-    public function nombrarCanciones(){
+    public function nombrarCanciones()
+    {
         $sql = $this->con->prepare("SELECT * FROM cancion");
         $sql->execute();
         $res = $sql->fetchAll();
         $arreglo = array();
         foreach ($res as $fila) {
-           $cancion = new Cancion();
-           $cancion->id_cancion = $fila['ID_cancion'];
-           $cancion->id_genero = $fila['ID_genero'];
-           $cancion->id_album = $fila['ID_album'];
-           $cancion->titulo = $fila['Titulo'];
-           $cancion->duracion = $fila['Duracion'];
-           $cancion->fecha = $fila['Fecha'];
-           $cancion->letra = $fila['Letra'];
-           // Columna nueva a partir de búsqueda:
-           $cancion->artista = "N"; // Not defined yet
+            $cancion = new Cancion();
+            $cancion->id_cancion = $fila['ID_cancion'];
+            $cancion->id_genero = $fila['ID_genero'];
+            $cancion->id_album = $fila['ID_album'];
+            $cancion->titulo = $fila['Titulo'];
+            $cancion->duracion = $fila['Duracion'];
+            $cancion->fecha = $fila['Fecha'];
+            $cancion->letra = $fila['Letra'];
+            // Columna nueva a partir de búsqueda:
+            $cancion->artista = "N"; // Not defined yet
 
-           array_push($arreglo, $cancion);
+            array_push($arreglo, $cancion);
         }
         return $arreglo;
     }
