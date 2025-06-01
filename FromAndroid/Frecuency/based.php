@@ -70,7 +70,9 @@ class BaseDeDatos
     }
     public function nombrarCanciones()
     {
-        $sql = $this->con->prepare("SELECT * FROM cancion");
+        $sql = $this->con->prepare("SELECT cancion.*, artista.Nombre_artistico FROM cancion 
+	                                            INNER JOIN album_artista ON (cancion.ID_album = album_artista.ID_album) 
+                                                INNER JOIN artista ON (artista.ID_artista = album_artista.ID_artista);");
         $sql->execute();
         $res = $sql->fetchAll();
         $arreglo = array();
@@ -85,7 +87,7 @@ class BaseDeDatos
             $cancion->letra = $fila['Letra'];
             $cancion->audio = $fila['Audio'];
             // Columna nueva a partir de búsqueda:
-            $cancion->artista = "N"; // Not defined yet
+            $cancion->artista = $fila['Nombre_artistico'];
 
             array_push($arreglo, $cancion);
         }
