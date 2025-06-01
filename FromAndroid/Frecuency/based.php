@@ -18,21 +18,29 @@ class BaseDeDatos
 
     public function registrar($nombre, $apeP, $apeM, $email, $pass)
     {
-        try {
-            $sql = $this->con->prepare("INSERT INTO `usuario` (`id_usuario`, `Nombre`, `Apellido_Paterno`, `Apellido_Materno`, `Email`, `Contraseña`) 
-                                    VALUES (NULL, ?, ?, ?, ?, ?);");
-            $sql->execute([$nombre, $apeP, $apeM, $email, $pass]);
+        // Verificar si el email ya existe
+        $check = $this->con->prepare("SELECT COUNT(*) FROM usuario WHERE Email = ?");
+        $check->execute([$email]);
+        $count = $check->fetchColumn();
 
-            if ($sql->rowCount() > 0) {
-                return 1; // Éxito
-            } else {
-                return -1; // Fallo al insertar
-            }
-        } catch (PDOException $e) {
-            return -2; // Error de base de datos
+        if ($count > 0) {
+            echo "Email ya registrado<br>";
+            return -1; // Indicamos que el usuario ya existe
+        }
+
+        // Si no existe, proceder con el registro
+        $sql = $this->con->prepare("INSERT INTO `usuario` (`id_usuario`, `Nombre`, `Apellido_Paterno`, `Apellido_Materno`, `Email`, `Contraseña`) 
+                                VALUES (NULL, ?, ?, ?, ?, ?);");
+        $resultado = $sql->execute([$nombre, $apeP, $apeM, $email, $pass]);
+
+        if ($resultado) {
+            echo "Datos registrados correctamente<br>";
+            return 1;
+        } else {
+            echo "Error al registrar<br>";
+            return 0;
         }
     }
-
 
     public function ingreso($usr, $pass)
     {

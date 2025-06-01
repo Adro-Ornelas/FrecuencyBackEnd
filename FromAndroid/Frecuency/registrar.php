@@ -15,7 +15,5 @@
         $res = $bd->registrar($nombre, $apeP, $apeM, $email, $pass);
 
         echo json_encode(['usr' => $res]);
-    } else {
-        echo json_encode(['usr' => -1]);
     }
 ?>
