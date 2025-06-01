@@ -83,6 +83,7 @@ class BaseDeDatos
             $cancion->duracion = $fila['Duracion'];
             $cancion->fecha = $fila['Fecha'];
             $cancion->letra = $fila['Letra'];
+            $cancion->audio = $fila['Audio'];
             // Columna nueva a partir de búsqueda:
             $cancion->artista = "N"; // Not defined yet
 
