@@ -93,5 +93,12 @@ class BaseDeDatos
         }
         return $arreglo;
     }
+    public function verPlaylists($id_usuario)
+    {
+        $sql = $this->con->prepare("SELECT *FROM playlist WHERE (ID_usuario = ?);");
+        $sql->execute([$id_usuario]);
+        $res = $sql->fetchAll(PDO::FETCH_NUM);
+        return $res;
+    }
 }
 ?>
