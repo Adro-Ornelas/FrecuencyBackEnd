@@ -24,7 +24,6 @@ class BaseDeDatos
         $count = $check->fetchColumn();
 
         if ($count > 0) {
-            echo "Email ya registrado<br>";
             return -1; // Indicamos que el usuario ya existe
         }
 
@@ -34,10 +33,8 @@ class BaseDeDatos
         $resultado = $sql->execute([$nombre, $apeP, $apeM, $email, $pass]);
 
         if ($resultado) {
-            echo "Datos registrados correctamente<br>";
             return 1;
         } else {
-            echo "Error al registrar<br>";
             return 0;
         }
     }
