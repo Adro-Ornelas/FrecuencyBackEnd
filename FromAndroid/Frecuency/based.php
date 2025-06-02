@@ -100,5 +100,12 @@ class BaseDeDatos
         $res = $sql->fetchAll(PDO::FETCH_NUM);
         return $res;
     }
+    public function verAlbum()
+    {
+        $sql = $this->con->prepare("SELECT * FROM album;");
+         $sql->execute();
+         $res = $sql->fetchAll(PDO::FETCH_NUM);
+         return $res;
+    }
 }
 ?>
