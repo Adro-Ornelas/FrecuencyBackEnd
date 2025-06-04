@@ -26,11 +26,11 @@ $query = mysqli_query($con, $sql);
     <div class="users-form">
         <h1>Usuarios</h1>
         <form action="insert_user.php" method="POST">
-            <input type="text" name="nombre" placeholder="Nombre(s)">
-            <input type="text" name="apellidop" placeholder="Apellido paterno">
-            <input type="text" name="apellidom" placeholder="Apellido materno">
-            <input type="email" name="email" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
+            <input type="text" required name="nombre" placeholder="Nombre(s)">
+            <input type="text" required name="apellidop" placeholder="Apellido paterno">
+            <input type="text" required name="apellidom" placeholder="Apellido materno">
+            <input type="email" required name="email" placeholder="Email">
+            <input type="password" required name="password" placeholder="Password">
 
             <input type="submit" value="Agregar">
         </form>

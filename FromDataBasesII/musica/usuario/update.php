@@ -22,12 +22,12 @@
     <body>
         <div class="users-form">
             <form action="edit_user.php" method="POST">
-				<input type="hidden" name="id" value="<?= $row["id_usuario"]?>">
-                Nombre(s):<input type="text" name="nombre" placeholder="Nombre(s)" value="<?= $row['Nombre']?>">
-				Apellido Paterno:<input type="text" name="apellidop" placeholder="Apellido Paterno" value="<?= $row['Apellido_Paterno']?>">
-                Apellido Materno:<input type="text" name="apellidom" placeholder="Apellido Materno" value="<?= $row['Apellido_Materno']?>">
-                E-mail:<input type="text" name="email" placeholder="Email" value="<?= $row['Email']?>">
-                Contraseña:<input type="text" name="password" placeholder="Password" value="<?= $row['Password']?>">
+				<input type="hidden" required name="id" value="<?= $row["id_usuario"]?>">
+                Nombre(s):<input type="text" required name="nombre" placeholder="Nombre(s)" value="<?= $row['Nombre']?>">
+				Apellido Paterno:<input type="text" required name="apellidop" placeholder="Apellido Paterno" value="<?= $row['Apellido_Paterno']?>">
+                Apellido Materno:<input type="text" required name="apellidom" placeholder="Apellido Materno" value="<?= $row['Apellido_Materno']?>">
+                E-mail:<input type="text" required name="email" placeholder="Email" value="<?= $row['Email']?>">
+                Contraseña:<input type="text" required name="password" placeholder="Password" value="<?= $row['Password']?>">
                 <input type="submit" value="Actualizar">
             </form>
         </div>
