@@ -12,14 +12,7 @@
         <a href="playlist/index.php" class="btn">Playlists</a>
         <a href="usuario/index.php" class="btn">Usuarios</a>
         <a href="artista/index.php" class="btn">Artistas</a>
-        
-    </div>
-    
-    <div class="btn-group-custom">
-        <a href="cancion/index.php" class="btn">Canciones</a>
-        <a href="playlist/index.php" class="btn">Playlists</a>
-        <a href="usuario/index.php" class="btn">Usuarios</a>
-        <a href="artista/index.php" class="btn">Artistas</a>
+        <a href="discografia/index.php" class="btn">Discografías</a>
     </div>
 </body>
 </html>
