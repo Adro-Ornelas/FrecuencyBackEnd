@@ -16,9 +16,9 @@ $duracion = $_POST["duracion"];
 $fecha = $_POST["fecha"];
 
 $sql = "INSERT INTO cancion(ID_genero, ID_album, Titulo,
-        Letra, Duracion, Fecha ) VALUES('$genero','$album', '$titulo',
-        '$letra', '$duracion', '$fecha')";
-
+        Letra, Duracion, Fecha)
+        VALUES('$genero','$album', '$titulo', '$letra',
+        '$duracion', '$fecha')";
 $query = mysqli_query($con, $sql);
 
 if($query){

@@ -12,9 +12,8 @@ $usuario = $_POST['usuario'];
 $nombre = $_POST['nombre'];
 $fecha = $_POST['fecha'];
 
-
-
-$sql = "INSERT INTO playlist(ID_usuario, Nombre, Fecha_creacion) VALUES('$usuario','$nombre','$fecha')";
+$sql = "INSERT INTO playlist(ID_usuario, Nombre, Fecha_creacion)
+        VALUES('$usuario','$nombre','$fecha')";
 
 $query = mysqli_query($con, $sql);
 
