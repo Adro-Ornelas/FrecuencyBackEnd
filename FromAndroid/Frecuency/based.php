@@ -9,7 +9,7 @@ class BaseDeDatos
     public function __construct()
     {
         try {
-            $this->con = new PDO('mysql:host=localhost;dbname=bd_musica', 'root', '');
+            $this->con = new PDO('mysql:host=localhost;dbname=frecuency', 'root', '');
             $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("Error de conexión: " . $e->getMessage());
