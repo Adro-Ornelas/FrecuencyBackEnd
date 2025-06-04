@@ -23,7 +23,7 @@ $query = mysqli_query($con, $sql);
         <h1>Playlist</h1>
         <form action="insertar.php" method="POST">
 			<select name="usuario">
-				<option value="0" selected disabled hidden>Seleccionar usuario</option>
+				<option selected disabled hidden>Seleccionar usuario</option>
 			<?php
 				// Lista dinámica 		
 			$usuarios = $con->query("SELECT id_usuario, Nombre,

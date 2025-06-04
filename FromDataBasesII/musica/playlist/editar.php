@@ -20,9 +20,10 @@
     </head>
     <body>
         <div class="users-form">
-            <form action="edit_user.php" method="POST">
+            <form action="actualizar.php" method="POST">
 				<input type="hidden" required name="id" value="<?= $row["ID_playlist"]?>">
-				Playlist:<select name="usuario">
+                Usuario creador:                
+                <select name="usuario">
 				<?php
 					// Lista dinámica 		
 				$usuarios = $con->query("SELECT ID_usuario, Nombre,

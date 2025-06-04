@@ -40,7 +40,7 @@ $query = mysqli_query($con, $sql);
 			<select name="genero">
 				<option value="0" selected disabled hidden>Seleccionar género</option>
                 <?php
-                    // Lista dinámica 		
+                    // Lista dinámica, muestra género
                 $generos = $con->query("SELECT ID_genero, Nombre FROM genero"); 
                 foreach($generos as $valores){
                     echo "<option value='".$valores['ID_genero']."'>".
@@ -48,33 +48,39 @@ $query = mysqli_query($con, $sql);
                 }	
                 ?>
 			</select>
-            
-			<input type="text" required name="fecha" placeholder="Fecha de creación" 
-					value ="<?= date("Y-m-d"); ?>">
+            <input type="text" required name="letra" placeholder="Ruta de letra (lyrics) de la canción">
+            <input type="text" required name="duracion" placeholder="Duración">
+			<input type="date" required name="fecha" placeholder="Fecha de creación">
             <input type="submit" value="Agregar">
         </form>
     </div>
 
     <div class="users-table">
-        <h2>Canción registradas</h2>
+        <h2>Canciones registradas</h2>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>ID_usuario</th>
-                    <th>Nombre</th>
-                    <th>Fecha creación</th>
+                    <th>Título</th>
+                    <th>Album</th>
+                    <th>Genero</th>
+                    <th>Letra</th>
+                    <th>Duración</th>
+                    <th>Fecha</br>creación</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while ($row = mysqli_fetch_array($query)): ?>
                     <tr>
-                        <th><?= $row['ID_canción'] ?></th>
-                        <th><?= $row['ID_usuario'] ?></th>
-                        <th><?= $row['Nombre'] ?></th>
-                        <th><?= $row['Fecha_creacion'] ?></th>
-                        <th><a href="editar.php?id=<?= $row['ID_canción'] ?>" class="users-table--edit">Editar</a></th>
-						<th><a href="eliminar.php?id=<?= $row['ID_canción'] ?>" class="users-table--delete" >Eliminar</a></th>
+                        <th><?= $row['ID_cancion'] ?></th>
+                        <th><?= $row['Titulo'] ?></th>
+                        <th><?= $row['ID_album'] ?></th>
+                        <th><?= $row['ID_genero'] ?></th>
+                        <th><?= $row['Letra'] ?></th>
+                        <th><?= $row['Duracion'] ?></th>
+                        <th><?= $row['Fecha'] ?></th>
+                        <th><a href="editar.php?id=<?= $row['ID_cancion'] ?>" class="users-table--edit">Editar</a></th>
+						<th><a href="eliminar.php?id=<?= $row['ID_cancion'] ?>" class="users-table--delete" >Eliminar</a></th>
                     </tr>
                 <?php endwhile; ?>
             </tbody>
