@@ -61,6 +61,7 @@ $query = mysqli_query($con, $sql);
                         <th><?= $row['Nombre'] ?></th>
                         <th><?= $row['Fecha_creacion'] ?></th>
                         <th><a href="editar.php?id=<?= $row['ID_playlist'] ?>" class="users-table--edit">Editar</a></th>
+                        <th><a href="./playlist_cancion/ver_canciones.php?playlist=<?= $row['ID_playlist'] ?>" class="users-table--edit">Ver canciones</a></th>
 						<th><a href="eliminar.php?id=<?= $row['ID_playlist'] ?>" class="users-table--delete" >Eliminar</a></th>
                     </tr>
                 <?php endwhile; ?>

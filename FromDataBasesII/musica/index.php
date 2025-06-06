@@ -14,7 +14,6 @@
         <a href="artista/index.php" class="btn">Artistas</a>
         <a href="discografia/index.php" class="btn">Discografías</a>
         <a href="genero/index.php" class="btn">Géneros</a>
-        <a href="playlist_cancion/index.php" class="btn">Playlist_Canción</a>
         <a href="album/index.php" class="btn">Álbum</a>
     </div>
 </body>
