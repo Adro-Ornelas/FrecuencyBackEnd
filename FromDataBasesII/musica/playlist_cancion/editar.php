@@ -26,7 +26,7 @@
         <div class="users-form">
             <form action="actualizar.php" method="POST">
                 Playlist:
-                <select name="usuario">
+                <select name="playlist">
 				<?php
                 // Lista dinámica de playlist
                 $playlists = $con->query("SELECT ID_playlist,

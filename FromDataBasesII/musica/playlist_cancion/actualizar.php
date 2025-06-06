@@ -3,17 +3,16 @@
 include("../connection.php");
 $con = connection();
 
-$id= $_POST['id'];
-$usuario = $_POST['usuario'];
-$nombre = $_POST['nombre'];
-$fecha = $_POST['fecha'];
+$playlist = $_POST['playlist'];
+$cancion = $_POST['cancion'];
 
-$sql="UPDATE playlist SET ID_usuario='$usuario', Nombre='$nombre', Fecha_creacion='$fecha'
-      WHERE ID_playlist='$id'";
+// Solo actualiza la cancion
+$sql="UPDATE playlist_cancion SET ID_cancion='$cancion'
+      WHERE ID_playlist='$playlist'";
 $query = mysqli_query($con, $sql);
 
 if($query){
-    Header("Location: index.php");
+   Header("Location: index.php");
 }else{
 
 }
