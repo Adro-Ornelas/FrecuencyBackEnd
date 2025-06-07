@@ -31,20 +31,16 @@
     </head>
     <body>
         <h1>
-        Canciones de playlist (<?= $nombrePlaylist['Nombre'] ?>)
+        Canciones de playlist: <?= $nombrePlaylist['Nombre'] ?>
         </h1>
-        <div class="users-form">
-            <form action="actualizar.php" method="POST">
-            </form>
-        </div>
-
+<!-- AQUÍ VA EL FORM EN TABLAS PRINCIPALES-->
         <div class="users-table">
         <h2>Canciones registradas</h2>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Cancion</th>
+                    <th>Canción</th>
                     <th><a href="insertar_cancion.php?playlist=<?= $playlist ?>"
                     class="users-table--edit">+</a></th>
                 </tr>

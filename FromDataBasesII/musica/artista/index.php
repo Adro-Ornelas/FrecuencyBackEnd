@@ -31,7 +31,7 @@ $query = mysqli_query($con, $sql);
         </form>
     </div>
     <div class="users-table">
-        <h2>Artistas registradas</h2>
+        <h2>Artistas registrados</h2>
         <table>
             <thead>
                 <tr>
@@ -51,6 +51,7 @@ $query = mysqli_query($con, $sql);
                         <th><?= $row['Apellido_Paterno'] ?></th>
                         <th><?= $row['Apellido_Materno'] ?></th>
                         <th><a href="editar.php?id=<?= $row['ID_artista'] ?>" class="users-table--edit">Editar</a></th>
+                        <th><a href="./artista_album/ver_albumes.php?artista=<?= $row['ID_artista'] ?>" class="users-table--edit">Ver álbumes</a></th>
 						<th><a href="eliminar.php?id=<?= $row['ID_artista'] ?>" class="users-table--delete" >Eliminar</a></th>
                     </tr>
                 <?php endwhile; ?>
