@@ -4,7 +4,7 @@
 
     $id=$_GET['id'];
 
-    $sql="SELECT * FROM usuario WHERE id_usuario='$id'";
+    $sql="SELECT * FROM usuario WHERE ID_usuario='$id'";
     $query=mysqli_query($con, $sql);
 
     $row=mysqli_fetch_array($query);
@@ -27,7 +27,10 @@
 				Apellido Paterno:<input type="text" required name="apellidop" placeholder="Apellido Paterno" value="<?= $row['Apellido_Paterno']?>">
                 Apellido Materno:<input type="text" required name="apellidom" placeholder="Apellido Materno" value="<?= $row['Apellido_Materno']?>">
                 E-mail:<input type="text" required name="email" placeholder="Email" value="<?= $row['Email']?>">
-                Contraseña:<input type="text" required name="password" placeholder="Password" value="<?= $row['Password']?>">
+                Contraseña (dejar en blanco para mantener contraseña anterior):
+                <input type="text" name="password" placeholder="Password" value="">
+                <!-- Contraseña vieja: -->
+                <input type="hidden" required name="password_old" value="<?= $row['Password']?>">
                 <input type="submit" value="Actualizar">
             </form>
         </div>

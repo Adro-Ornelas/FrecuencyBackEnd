@@ -15,6 +15,7 @@
         <a href="discografia/index.php" class="btn">Discografías</a>
         <a href="genero/index.php" class="btn">Géneros</a>
         <a href="album/index.php" class="btn">Álbum</a>
+        <a href="escucha/index.php" class="btn">Escucha</a>
     </div>
 </body>
 </html>

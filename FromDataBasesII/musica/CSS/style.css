@@ -7,10 +7,12 @@
 html {
     font-family: 'Segoe UI', sans-serif;
     text-align: center;
+    text-overflow: ellipsis;
 }
 
 a{
     text-decoration: none;
+    text-overflow: ellipsis;
 }
 
 .users-form form{
@@ -34,6 +36,7 @@ a{
     border-radius:4px;
     outline:none;
     transition:.3s;
+    text-overflow: clip;
 }
 
 .users-form form input[type=text]:focus,
@@ -67,20 +70,26 @@ a{
     padding: 0;
     width: 100%;
     table-layout: fixed;
+    text-overflow: ellipsis;
 }
 
 table tr {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
     padding: 4px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 table th{
     padding: 16px;
     text-align: center;
     font-size: .85em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
-
 .users-table--edit{
     background: #009688;
     padding: 6px;
@@ -107,4 +116,9 @@ table th{
 .users-table--delete:hover{
 	background-color: #ee0000;
 	color: black;
+}
+table th, table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
