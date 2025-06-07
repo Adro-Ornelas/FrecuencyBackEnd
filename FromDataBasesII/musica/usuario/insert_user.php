@@ -15,8 +15,10 @@ $apep = $_POST['apellidop'];
 $apem = $_POST['apellidom'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+//BCRYPT es el algoritmo de encriptacion, devuelve cadena de 60 caracteres
+$passwordHash = password_hash($contraseña, PASSWORD_BCRYPT);
 
-$sql = "INSERT INTO usuario(Nombre, Apellido_Paterno, Apellido_Materno, Email, Password) VALUES('$nombre','$apep','$apem','$email','$password')";
+$sql = "INSERT INTO usuario(Nombre, Apellido_Paterno, Apellido_Materno, Email, Password) VALUES('$nombre','$apep','$apem','$email','$passwordHash')";
 
 $query = mysqli_query($con, $sql);
 
