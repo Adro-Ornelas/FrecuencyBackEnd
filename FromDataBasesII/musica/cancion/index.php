@@ -3,8 +3,13 @@
 include("../connection.php");
 $con = connection();
 
-$sql = "SELECT * FROM cancion";
+$sql = "SELECT c.*,
+        g.Nombre AS genero, a.Titulo AS albumt
+        FROM cancion AS c INNER JOIN genero As g 
+        ON c.ID_genero=g.ID_genero INNER JOIN album AS a 
+        ON c.ID_album=a.ID_album ORDER BY c.ID_cancion ASC";
 $query = mysqli_query($con, $sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -74,8 +79,8 @@ $query = mysqli_query($con, $sql);
                     <tr>
                         <th><?= $row['ID_cancion'] ?></th>
                         <th><?= $row['Titulo'] ?></th>
-                        <th><?= $row['ID_album'] ?></th>
-                        <th><?= $row['ID_genero'] ?></th>
+                        <th><?= $row['ID_album']." - ".$row['albumt'] ?></th>
+                        <th><?= $row['ID_genero']." - ".$row['genero']  ?></th>
                         <th><?= $row['Letra'] ?></th>
                         <th><?= $row['Duracion'] ?></th>
                         <th><?= $row['Fecha'] ?></th>

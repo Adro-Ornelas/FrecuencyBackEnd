@@ -4,7 +4,12 @@ include("../connection.php");
 $con = connection();
 
 // Busca información de escucha
-$sql = "SELECT * FROM escucha";
+$sql = "SELECT e.*, u.Nombre AS nuser, u.Apellido_Paterno
+        AS uapep, c.Titulo AS nsong
+        FROM escucha AS e
+        INNER JOIN usuario AS u
+        ON e.ID_usuario=u.id_usuario
+        INNER JOIN cancion AS c ON e.ID_cancion=c.ID_cancion";
 $query = mysqli_query($con, $sql);
 ?>
 
@@ -21,7 +26,7 @@ $query = mysqli_query($con, $sql);
 
 <body>
     <div class="users-form">
-        <h1>escucha</h1>
+        <h1>Escucha</h1>
         <form action="insertar.php" method="POST">
             
 			<select name="usuario">
@@ -74,8 +79,9 @@ $query = mysqli_query($con, $sql);
                 <?php while ($row = mysqli_fetch_array($query)): ?>
                     <tr>
                         <th><?= $row['ID_usr_cancion'] ?></th>
-                        <th><?= $row['ID_usuario'] ?></th>
-                        <th><?= $row['ID_cancion'] ?></th>
+                        <th><?= $row['ID_usuario']." - ".$row['nuser'].
+                        " - ".$row['uapep'] ?></th>
+                        <th><?= $row['ID_cancion']." - ".$row['nsong'] ?></th>
                         <th><?= $row['Fecha'] ?></th>
                         <th><a href="editar.php?id=<?= $row['ID_usr_cancion'] ?>" class="users-table--edit">Editar</a></th>
 						<th><a href="eliminar.php?id=<?= $row['ID_usr_cancion'] ?>" class="users-table--delete" >Eliminar</a></th>

@@ -3,7 +3,11 @@
 include("../connection.php");
 $con = connection();
 
-$sql = "SELECT * FROM playlist";
+$sql = "SELECT p.*, u.Nombre AS usern, u.Apellido_Paterno
+        FROM playlist AS p
+        INNER JOIN usuario As u
+        ON p.ID_usuario=u.id_usuario";
+
 $query = mysqli_query($con, $sql);
 ?>
 
@@ -48,7 +52,7 @@ $query = mysqli_query($con, $sql);
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>ID_usuario</th>
+                    <th>Usuario</th>
                     <th>Nombre</th>
                     <th>Fecha creación</th>
                 </tr>
@@ -57,7 +61,8 @@ $query = mysqli_query($con, $sql);
                 <?php while ($row = mysqli_fetch_array($query)): ?>
                     <tr>
                         <th><?= $row['ID_playlist'] ?></th>
-                        <th><?= $row['ID_usuario'] ?></th>
+                        <th><?= $row['ID_usuario']." - ".$row['usern'].
+                        " ".$row['Apellido_Paterno']?></th>
                         <th><?= $row['Nombre'] ?></th>
                         <th><?= $row['Fecha_creacion'] ?></th>
                         <th><a href="editar.php?id=<?= $row['ID_playlist'] ?>" class="users-table--edit">Editar</a></th>

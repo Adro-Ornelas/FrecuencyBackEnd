@@ -4,7 +4,9 @@ include("../connection.php");
 $con = connection();
 
 // Busca información de album
-$sql = "SELECT * FROM album";
+$sql = "SELECT a.*, d.Nombre AS ndisco FROM album AS a
+        INNER JOIN discografia AS d
+        ON a.ID_discografia=d.ID_discografia";
 $query = mysqli_query($con, $sql);
 ?>
 
@@ -58,7 +60,7 @@ $query = mysqli_query($con, $sql);
                     <tr>
                         <th><?= $row['ID_album'] ?></th>
                         <th><?= $row['Titulo'] ?></th>
-                        <th><?= $row['ID_discografia'] ?></th>
+                        <th><?= $row['ID_discografia']." - ".$row['ndisco'] ?></th>
                         <th><?= $row['Imagen'] ?></th>
                         <th><?= $row['Fecha'] ?></th>
                         <th><a href="editar.php?id=<?= $row['ID_album'] ?>" class="users-table--edit">Editar</a></th>
