@@ -20,6 +20,7 @@
         
     </head>
     <body>
+        <a href="index.php" class="btn-back">Atrás</a>
         <div class="users-form">
             <form action="edit_user.php" method="POST">
 				<input type="hidden" required name="id" value="<?= $row["id_usuario"]?>">

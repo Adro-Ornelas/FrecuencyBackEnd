@@ -25,17 +25,19 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="http://localhost/musica/CSS/style.css" rel="stylesheet">
+        <link href="../../CSS/style.css" rel="stylesheet">
         <title>Canciones de playlist</title>
         
     </head>
+    
+    <a href="../index.php" class="btn-back">Atrás</a>
     <body>
         <h1>
         Canciones de playlist: <?= $nombrePlaylist['Nombre'] ?>
         </h1>
+        <h2><br></h2>
 <!-- AQUÍ VA EL FORM EN TABLAS PRINCIPALES-->
         <div class="users-table">
-        <h2>Canciones registradas</h2>
         <table>
             <thead>
                 <tr>

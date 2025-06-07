@@ -40,7 +40,6 @@ a{
 }
 
 .users-form form input[type=text]:focus,
-.users-form form input[type=password]:focus,
 .users-form form input[type=password]:focus{
     border-color:dodgerBlue;
     box-shadow:0 0 6px 0 dodgerBlue;
@@ -90,6 +89,24 @@ table th{
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.btn-back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+.btn-back:hover {
+  background-color: #000000;
+  color: white;
+}
+
 .users-table--edit{
     background: #009688;
     padding: 6px;
@@ -122,3 +139,5 @@ table th, table td {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+

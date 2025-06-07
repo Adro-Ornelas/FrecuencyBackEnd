@@ -21,6 +21,7 @@
         
     </head>
     <body>
+        <a href="../index.php" class="btn-back">Atrás</a>
         <div class="users-form">
             <h1>Playlist: <?= $nombrePlaylist['Nombre'] ?></h1>
             <form action="evento_insertar.php" method="POST">            

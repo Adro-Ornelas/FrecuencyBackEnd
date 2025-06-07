@@ -20,6 +20,7 @@ $query = mysqli_query($con, $sql);
 </head>
 
 <body>
+    <a href="../index.php" class="btn-back">Atrás</a>
     <div class="users-form">
         <h1>Discografía</h1>
         <form action="insertar.php" method="POST">

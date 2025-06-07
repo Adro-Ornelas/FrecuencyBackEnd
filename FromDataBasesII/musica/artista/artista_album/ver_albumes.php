@@ -24,11 +24,12 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="http://localhost/musica/CSS/style.css" rel="stylesheet">
+        <link href="../../CSS/style.css" rel="stylesheet">
         <title>albumes de artista</title>
         
     </head>
     <body>
+        <a href="../index.php" class="btn-back">Atrás</a>
         <h1>
         Álbumes de artista: <?= $nombreartista['Nombre_artistico'] ?>
         </h1>

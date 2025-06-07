@@ -19,6 +19,7 @@
         
     </head>
     <body>
+        <a href="index.php" class="btn-back">Atrás</a>
         <div class="users-form">
             <form action="actualizar.php" method="POST">
      		<input type="hidden" required name="id" value="<?= $row["ID_album"]?>">
