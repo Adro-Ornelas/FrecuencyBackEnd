@@ -4,14 +4,13 @@ include("../connection.php");
 $con = connection();
 
 $id= $_POST["id"];
-$nombreA = $_POST["nombreA"];
-$nombre = $_POST["nombre"];
-$apep = $_POST["apep"];
-$apem = $_POST["apem"];
+$usuario = $_POST["usuario"];
+$cancion = $_POST["cancion"];
+$fecha = $_POST["fecha"];
 
-$sql=  "UPDATE artista SET Nombre_artistico='$nombreA', Nombre='$nombre',
-        Apellido_Paterno='$apep', Apellido_Materno='$apem'
-        WHERE ID_artista='$id'";
+$sql=  "UPDATE escucha SET ID_usuario='$usuario', ID_cancion='$cancion',
+        Fecha='$fecha'
+        WHERE ID_usr_cancion='$id'";
 $query = mysqli_query($con, $sql);
 
 if($query){

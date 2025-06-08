@@ -5,14 +5,13 @@
     // Recupera playlist
     $playlist = $_GET['playlist'];
 
+
     // Selecciona todas las ID de las canciones contenidas en playlist
     $sql="SELECT c.ID_cancion, c.Titulo, pc.ID_playlist FROM cancion AS c
         INNER JOIN playlist_cancion AS pc
         ON c.ID_cancion=pc.ID_cancion
         WHERE pc.ID_playlist='$playlist'";
     $query=mysqli_query($con, $sql);
-    // Desempaca resultados en arreglo
-    $row=mysqli_fetch_array($query);
     
     // Recupera nombre de la playlist
     $nombrePlaylist = $con->query("SELECT Nombre

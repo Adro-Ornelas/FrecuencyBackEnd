@@ -22,6 +22,7 @@
         <a href="index.php" class="btn-back">Atrás</a>
         <div class="users-form">
             <form action="actualizar.php" method="POST">
+                <input type="hidden" name="id" value="<?=$row['ID_usr_cancion']?>">
                 Usuario escuchador:                
                 <select name="usuario">
 				<?php
@@ -59,7 +60,7 @@
                 ?>
                 </select>
 			    Fecha y hora de escucha:
-                <input type="datetime-local" required name="apem" value="<?= $row["Fecha"]?>">
+                <input type="datetime-local" required name="fecha" value="<?= $row["Fecha"]?>">
             <input type="submit" value="Actualizar">
             </form>
         </div>
