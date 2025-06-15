@@ -103,20 +103,37 @@ class BaseDeDatos
     public function verAlbum()
     {
         $sql = $this->con->prepare("SELECT * FROM album;");
-         $sql->execute();
-         $res = $sql->fetchAll(PDO::FETCH_NUM);
-         return $res;
+        $sql->execute();
+        $res = $sql->fetchAll(PDO::FETCH_NUM);
+        return $res;
     }
-        public function insertar_artista($nombre_art, $nombre_real, $apep, $apem,
-                        $tel,  $fecha_nac, $ciudad_show, $hora_inicio, $hora_final)
-    {
+    public function insertar_artista(
+        $nombre_art,
+        $nombre_real,
+        $apep,
+        $apem,
+        $tel,
+        $fecha_nac,
+        $ciudad_show,
+        $hora_inicio,
+        $hora_final
+    ) {
         // Insertar
         $sql = $this->con->prepare("INSERT INTO artista(ID_artista, Nombre_artistico, 
         Nombre, Apellido_Paterno, Apellido_Materno, num_tel, fecha_nac, 
         ciudad_show, hora_inicio, hora_final) 
         VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
-        $resultado = $sql->execute([$nombre_art, $nombre_real, $apep, $apem,
-        $tel, $fecha_nac, $ciudad_show, $hora_inicio, $hora_final]);
+        $resultado = $sql->execute([
+            $nombre_art,
+            $nombre_real,
+            $apep,
+            $apem,
+            $tel,
+            $fecha_nac,
+            $ciudad_show,
+            $hora_inicio,
+            $hora_final
+        ]);
 
         if ($resultado) {
             return 1;
@@ -124,7 +141,7 @@ class BaseDeDatos
             return 0;
         }
     }
-        public function recuperar_artistas()
+    public function recuperar_artistas()
     {
         $sql = $this->con->prepare("SELECT * FROM artista");
         $sql->execute();
@@ -154,10 +171,50 @@ class BaseDeDatos
         WHERE ID_artista=?;");
         $res = $sql->execute([$id_artista]);
 
-        if($res)
+        if ($res)
             return 1;
-        else 
+        else
             return 0;
     }
+    public function actualizarArtista(
+        $id,
+        $nombre_art,
+        $nombre_real,
+        $apep,
+        $apem,
+        $tel,
+        $fecha_nac,
+        $ciudad_show,
+        $hora_inicio,
+        $hora_final
+    ) {
+        $sql = $this->con->prepare("UPDATE artista SET 
+        Nombre_artistico = ?, 
+        Nombre = ?, 
+        Apellido_Paterno = ?, 
+        Apellido_Materno = ?, 
+        num_tel = ?, 
+        fecha_nac = ?, 
+        ciudad_show = ?, 
+        hora_inicio = ?, 
+        hora_final = ? 
+        WHERE ID_artista = ?");
+
+        $resultado = $sql->execute([
+            $nombre_art,
+            $nombre_real,
+            $apep,
+            $apem,
+            $tel,
+            $fecha_nac,
+            $ciudad_show,
+            $hora_inicio,
+            $hora_final,
+            $id
+        ]);
+
+        return $resultado ? 1 : 0;
+    }
+
 }
 ?>
