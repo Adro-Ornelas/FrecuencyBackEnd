@@ -1,7 +1,7 @@
 <?php
 // Objetos de cada tabla:
 require_once 'Cancion.php';
-
+require_once 'Artista.php';
 // Objeto para conectar y CRUD:
 class BaseDeDatos
 {
@@ -123,6 +123,29 @@ class BaseDeDatos
         } else {
             return 0;
         }
+    }
+        public function recuperar_artistas()
+    {
+        $sql = $this->con->prepare("SELECT * FROM artista");
+        $sql->execute();
+        $res = $sql->fetchAll();
+        $arreglo = array();
+        foreach ($res as $fila) {
+            $artista = new Artista();
+            $artista->id_artista = $fila['ID_artista'];
+            $artista->nombre_art = $fila['Nombre_artistico'];
+            $artista->nombre_real = $fila['Nombre'];
+            $artista->apep = $fila['Apellido_Paterno'];
+            $artista->apem = $fila['Apellido_Materno'];
+            $artista->tel = $fila['num_tel'];
+            $artista->fecha_nac = $fila['fecha_nac'];
+            $artista->ciudad_show = $fila['ciudad_show'];
+            $artista->hora_inicio = $fila['hora_inicio'];
+            $artista->hora_final = $fila['hora_final'];
+
+            array_push($arreglo, $artista);
+        }
+        return $arreglo;
     }
 }
 ?>
