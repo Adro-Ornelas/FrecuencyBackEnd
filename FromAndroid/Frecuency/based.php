@@ -147,5 +147,17 @@ class BaseDeDatos
         }
         return $arreglo;
     }
+    public function eliminar_artista($id_artista)
+    {
+        // Elimina artista, devuelve 1 si exitoso 0 si no
+        $sql = $this->con->prepare("DELETE FROM artista
+        WHERE ID_artista=?;");
+        $res = $sql->execute([$id_artista]);
+
+        if($res)
+            return 1;
+        else 
+            return 0;
+    }
 }
 ?>
