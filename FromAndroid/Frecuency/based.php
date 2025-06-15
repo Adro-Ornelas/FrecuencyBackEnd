@@ -111,10 +111,10 @@ class BaseDeDatos
                         $tel,  $fecha_nac, $ciudad_show, $hora_inicio, $hora_final)
     {
         // Insertar
-        $sql = $this->con->prepare("INSERT INTO 'artista' ('ID_artista', 
-        'Nombre_artistico', 'Nombre', 'Apellido_Paterno', 'Apellido_Materno', 
-        'num_tel', 'fecha_nac', 'ciudad_show', 'hora_inicio', 'hora_final') 
-                                VALUES (NULL, ?, ?, ?, ?, ?);");
+        $sql = $this->con->prepare("INSERT INTO artista(ID_artista, Nombre_artistico, 
+        Nombre, Apellido_Paterno, Apellido_Materno, num_tel, fecha_nac, 
+        ciudad_show, hora_inicio, hora_final) 
+        VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
         $resultado = $sql->execute([$nombre_art, $nombre_real, $apep, $apem,
         $tel, $fecha_nac, $ciudad_show, $hora_inicio, $hora_final]);
 
