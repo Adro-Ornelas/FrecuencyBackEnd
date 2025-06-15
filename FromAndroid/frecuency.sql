@@ -107,7 +107,7 @@ CREATE TABLE `artista` (
   `hora_inicio` time DEFAULT NULL,
   `hora_final` time DEFAULT NULL,
   PRIMARY KEY (`ID_artista`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +116,7 @@ CREATE TABLE `artista` (
 
 LOCK TABLES `artista` WRITE;
 /*!40000 ALTER TABLE `artista` DISABLE KEYS */;
-INSERT INTO `artista` VALUES (1,'Metallica','James Alan','Hetfield','Nicks',NULL,NULL,NULL,NULL,NULL),(2,'Queen','Farrokh','Bulsara','Dashti',NULL,NULL,NULL,NULL,NULL),(3,'Nirvana','Kurt Donald','Cobain','Fradenburg',NULL,NULL,NULL,NULL,NULL),(4,'Coldplay','Christopher Anthony','Martin','Buckland',NULL,NULL,NULL,NULL,NULL),(5,'Billie Eilish','Billie Eilish','O’Connell','Baird',NULL,NULL,NULL,NULL,NULL),(6,'Shakira','Shakira Isabel','Mebarak','Ripoll',NULL,NULL,NULL,NULL,NULL),(7,'Daddy Yankee','Ramón Luis','Ayala','Rodríguez',NULL,NULL,NULL,NULL,NULL),(8,'Drake','Aubrey Drake','Graham','Sher',NULL,NULL,NULL,NULL,NULL),(9,'Adele','Adele Laurie','Adkins','Blue',NULL,NULL,NULL,NULL,NULL),(10,'Arctic Monkeys','Alexander David','Turner','Thompson',NULL,NULL,NULL,NULL,NULL),(11,'Tren Lokote','Juan Fidel','Jurado','Velazquez',NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `artista` VALUES (1,'Metallica','James Alan','Hetfield','Nicks','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(2,'Queen','Farrokh','Bulsara','Dashti','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(3,'Nirvana','Kurt Donald','Cobain','Fradenburg','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(4,'Coldplay','Christopher Anthony','Martin','Buckland','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(5,'Billie Eilish','Billie Eilish','O’Connell','Baird','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(6,'Shakira','Shakira Isabel','Mebarak','Ripoll','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(7,'Daddy Yankee','Ramón Luis','Ayala','Rodríguez','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(8,'Drake','Aubrey Drake','Graham','Sher','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(9,'Adele','Adele Laurie','Adkins','Blue','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(10,'Arctic Monkeys','Alexander David','Turner','Thompson','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(11,'Tren Lokote','Juan Fidel','Jurado','Velazquez','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(13,'1','1','1','1','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(14,'q','q','q','q','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(16,'t','t','t','t','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(17,'jd','h','h','ggf','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(18,'Jaeo','h','h','ggf','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(19,'Jaeoirirurue','h','h','ggf','3312345678','2020-01-01','New York','18:00:00','20:00:00');
 /*!40000 ALTER TABLE `artista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -404,4 +404,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-14 19:26:01
+-- Dump completed on 2025-06-15  0:54:31
