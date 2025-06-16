@@ -102,12 +102,12 @@ CREATE TABLE `artista` (
   `Apellido_Paterno` varchar(50) NOT NULL,
   `Apellido_Materno` varchar(50) NOT NULL,
   `num_tel` varchar(10) DEFAULT NULL,
-  `fecha_nac` date DEFAULT NULL,
+  `fecha_show` date DEFAULT NULL,
   `ciudad_show` varchar(50) DEFAULT NULL,
   `hora_inicio` time DEFAULT NULL,
   `hora_final` time DEFAULT NULL,
   PRIMARY KEY (`ID_artista`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +116,7 @@ CREATE TABLE `artista` (
 
 LOCK TABLES `artista` WRITE;
 /*!40000 ALTER TABLE `artista` DISABLE KEYS */;
-INSERT INTO `artista` VALUES (1,'Metallica','James Alan','Hetfield','Nicks','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(2,'Queen','Farrokh','Bulsara','Dashti','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(3,'Nirvana','Kurt Donald','Cobain','Fradenburg','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(4,'Coldplay','Christopher Anthony','Martin','Buckland','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(5,'Billie Eilish','Billie Eilish','O’Connell','Baird','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(6,'Shakira','Shakira Isabel','Mebarak','Ripoll','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(7,'Daddy Yankee','Ramón Luis','Ayala','Rodríguez','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(8,'Drake','Aubrey Drake','Graham','Sher','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(9,'Adele','Adele Laurie','Adkins','Blue','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(10,'Arctic Monkeys','Alexander David','Turner','Thompson','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(11,'Tren Lokote','Juan Fidel','Jurado','Velazquez','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(13,'1','1','1','1','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(14,'q','q','q','q','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(16,'t','t','t','t','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(17,'jd','h','h','ggf','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(18,'Jaeo','h','h','ggf','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(19,'Jaeoirirurue','h','h','ggf','3312345678','2020-01-01','New York','18:00:00','20:00:00');
+INSERT INTO `artista` VALUES (1,'Metallica','James Alan','Hetfield','Nicks','3312345678','2020-01-01','Guanajuato','18:00:00','20:00:00'),(2,'Queen','Farrokh','Bulsara','Dashti','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(3,'Nirvana','Kurt Donald','Cobain','Fradenburg','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(4,'Coldplay','Christopher Anthony','Martin','Buckland','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(5,'Billie Eilish','Billie Eilish','O’Connell','Baird','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(6,'Shakira','Shakira Isabel','Mebarak','Ripoll','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(7,'Daddy Yankee','Ramón Luis','Ayala','Rodríguez','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(8,'Drake','Aubrey Drake','Graham','Sher','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(9,'Adele','Adele Laurie','Adkins','Blue','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(10,'Arctic Monkeys','Alexander David','Turner','Thompson','3312345678','2020-01-01','New York','18:00:00','20:00:00'),(11,'Tren Lokote','Juan Fidel','Jurado','Velazquez','3322345678','1998-06-15','Seúl','20:05:00','23:06:00'),(12,'Michael Jackson','Michael Joseph','Jackson','Jackson','1234567890','1958-08-29','GDL','05:25:00','10:55:00'),(14,'Santa Grifa','Josue','Gonzalez','Manzano','3399887766','2025-06-30','Atenas','06:30:00','08:00:00');
 /*!40000 ALTER TABLE `artista` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -346,7 +346,7 @@ CREATE TABLE `usuario` (
   `Email` varchar(50) NOT NULL,
   `Contraseña` varchar(255) NOT NULL,
   PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -355,7 +355,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'Adrian Kosey','Angeles','Ramos','a22300871@ceti.mx','Adri@n1504'),(2,'Adro Yael','Ornelas','Ornelas','a22300918@ceti.mx','AdroY@1404'),(3,'Ana','Martínez','Ríos','ana.martinez@gmail.com','ana45612'),(4,'Luis','Ramírez','Gómez','luis.ramirez@gmail.com','luis7890'),(5,'María','López','Santos','maria.lopez@hotmail.com','maria32112'),(6,'Jorge','Pérez','Torres','jorge.perez@hotmail.com','jorge654123'),(7,'Elena','Torres','Vega','elena.torres@gmail.com','elena852123'),(8,'Sofía','Delgado','Mendoza','sofia.delgado@gmail.com','sofia96312'),(9,'Carlos','Méndez','Silva','carlos.mendez@ceti.mx','carlos14712'),(10,'Paola','Rivera','Castillo','paola.rivera@gmail.com','paola258123'),(13,'','','','ass',''),(14,'test','test','test','test@example1.com','test'),(15,'1','1','1','test@example.com','1'),(16,'Adotal','Ornelas','Ornelas','adotal1484@gmail.com','12345');
+INSERT INTO `usuario` VALUES (1,'Adrian Kosey','Angeles','Ramos','a22300871@ceti.mx','Adri@n1504'),(2,'Adro Yael','Ornelas','Ornelas','a22300918@ceti.mx','AdroY@1404'),(3,'Ana','Martínez','Ríos','ana.martinez@gmail.com','ana45612'),(4,'Luis','Ramírez','Gómez','luis.ramirez@gmail.com','luis7890'),(5,'María','López','Santos','maria.lopez@hotmail.com','maria32112'),(6,'Jorge','Pérez','Torres','jorge.perez@hotmail.com','jorge654123'),(7,'Elena','Torres','Vega','elena.torres@gmail.com','elena852123'),(8,'Sofía','Delgado','Mendoza','sofia.delgado@gmail.com','sofia96312'),(9,'Carlos','Méndez','Silva','carlos.mendez@ceti.mx','carlos14712'),(10,'Paola','Rivera','Castillo','paola.rivera@gmail.com','paola258123'),(11,'Adotal','Ornelas','Ornelas','adotal1484@gmail.com','12345');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -404,4 +404,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-15  0:54:31
+-- Dump completed on 2025-06-16  2:07:59
