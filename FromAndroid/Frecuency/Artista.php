@@ -7,7 +7,7 @@ class Artista {
     public $apep;
     public $apem;
     public $tel;
-    public $fecha_nac;
+    public $fecha_show;
     public $ciudad_show;
     public $hora_inicio;
     public $hora_final;
@@ -15,7 +15,7 @@ class Artista {
     public function __toString() {  // Imprimir como string
         return  "id_artista: $this->id_artista, nombre_art: $this->nombre_art,
         nombre_real: $this->nombre_real, apep: $this->apep, apem: $this->apem,
-        tel: $this->tel, ciudad_show: $this->ciudad_show, 
+        tel: $this->tel, fecha_show: $this->fecha_show, ciudad_show: $this->ciudad_show, 
         hora_inicio: $this->hora_inicio, hora_final: $this->hora_final\n";
     }
 }

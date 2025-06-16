@@ -113,14 +113,14 @@ class BaseDeDatos
         $apep,
         $apem,
         $tel,
-        $fecha_nac,
+        $fecha_show,
         $ciudad_show,
         $hora_inicio,
         $hora_final
     ) {
         // Insertar
         $sql = $this->con->prepare("INSERT INTO artista(ID_artista, Nombre_artistico, 
-        Nombre, Apellido_Paterno, Apellido_Materno, num_tel, fecha_nac, 
+        Nombre, Apellido_Paterno, Apellido_Materno, num_tel, fecha_show, 
         ciudad_show, hora_inicio, hora_final) 
         VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
         $resultado = $sql->execute([
@@ -129,7 +129,7 @@ class BaseDeDatos
             $apep,
             $apem,
             $tel,
-            $fecha_nac,
+            $fecha_show,
             $ciudad_show,
             $hora_inicio,
             $hora_final
@@ -155,7 +155,7 @@ class BaseDeDatos
             $artista->apep = $fila['Apellido_Paterno'];
             $artista->apem = $fila['Apellido_Materno'];
             $artista->tel = $fila['num_tel'];
-            $artista->fecha_nac = $fila['fecha_nac'];
+            $artista->fecha_show = $fila['fecha_show'];
             $artista->ciudad_show = $fila['ciudad_show'];
             $artista->hora_inicio = $fila['hora_inicio'];
             $artista->hora_final = $fila['hora_final'];
@@ -183,7 +183,7 @@ class BaseDeDatos
         $apep,
         $apem,
         $tel,
-        $fecha_nac,
+        $fecha_show,
         $ciudad_show,
         $hora_inicio,
         $hora_final
@@ -194,7 +194,7 @@ class BaseDeDatos
         Apellido_Paterno = ?, 
         Apellido_Materno = ?, 
         num_tel = ?, 
-        fecha_nac = ?, 
+        fecha_show = ?, 
         ciudad_show = ?, 
         hora_inicio = ?, 
         hora_final = ? 
@@ -206,7 +206,7 @@ class BaseDeDatos
             $apep,
             $apem,
             $tel,
-            $fecha_nac,
+            $fecha_show,
             $ciudad_show,
             $hora_inicio,
             $hora_final,
